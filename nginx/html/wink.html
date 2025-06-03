@@ -731,10 +731,10 @@
             <h1>wink</h1>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="http://localhost:8000/wink.php#Accueil/wink.php">Accueil</a></li>
-                <li><a href="http://localhost:8000/wink.php/wink.php#À propos/wink.php">À propos</a></li>
-                <li><a href="http://localhost:8000/wink.php/#catalog/">Catalogue</a></li>
-                <li><a href="http://localhost:8000/wink.php#images/wink.php">Images</a></li>
+                <li><button data-page="home" aria-label="Accueil">Accueil</button></li>
+                <li><button data-page="about" aria-label="À propos">à propos</button></li>
+                <li><button data-page="catalog" aria-label="Catalogue">Catalogue</button></li>
+                <li><button data-page="images" aria-label="Gestion des images">Images</button></li>
                 <li><button data-page="admin" aria-label="Administration">Administration</button></li>
                 <li><button data-page="contact" aria-label="Contact">Contact</button></li>
                 <li><button data-page="projet" aria-label="Projet">Projet</button></li>
@@ -856,7 +856,8 @@
                     Artists In Action</a>
 
                 <a id="liensNb2" href="http://www.technoplus.org/t,1/1071/qui-sommes-nous-?" target="_blank"
-                    rel="noopener noreferrer" aria-label="TECHNO PLUS" width="10%"><img src="img/headert+.png" width="50px">
+                    rel="noopener noreferrer" aria-label="TECHNO PLUS" width="10%"><img src="img/headert+.png"
+                        width="50px">
                     TECHNO PLUS</a>
 
                 <a id="liensNb" href="http://freeform.fr/qui-sommes-nous/" target="_blank" rel="noopener noreferrer"
@@ -864,7 +865,8 @@
                     Freeform.fr</a>
 
                 <a id="liensNb2" href="http://www.keep-smiling.com/?p=238" target="_blank" rel="noopener noreferrer"
-                    aria-label="KEEP SMILING" width="10%"><img src="img/Presentation-ks-logo.jpg.crdownload" width="50px">
+                    aria-label="KEEP SMILING" width="10%"><img src="img/Presentation-ks-logo.jpg.crdownload"
+                        width="50px">
                     KEEP SMILING</a>
 
                 <a id="liensNb0" href="http://sound-system-unity.forumactif.org" target="_blank"
@@ -904,7 +906,7 @@
         // });
 
         // * script mobile menu
-        document.getElementById('hamburgerMenu').addEventListener('click', function() {
+        document.getElementById('hamburgerMenu').addEventListener('click', function () {
             this.classList.toggle('active');
             document.getElementById('navLinks').classList.toggle('active');
         });
@@ -1020,7 +1022,7 @@
             const file = e.target.files[0];
             if (!file) return;
             const reader = new FileReader();
-            reader.onload = function(evt) {
+            reader.onload = function (evt) {
                 try {
                     const json = JSON.parse(evt.target.result);
                     if (Array.isArray(json)) {
@@ -1116,7 +1118,7 @@
             let filesLoaded = 0;
             files.forEach(file => {
                 const reader = new FileReader();
-                reader.onload = function(evt) {
+                reader.onload = function (evt) {
                     images.push(evt.target.result);
                     filesLoaded++;
                     if (filesLoaded === files.length) {
